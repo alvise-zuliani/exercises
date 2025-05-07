@@ -11,6 +11,7 @@
 //     b) The current index in the array.
 //     c) The array itself.
 
+// @ts-ignore
 Array.prototype.myMap = function (callback: any) {
     const output: any[] = [];
     
@@ -29,6 +30,7 @@ Array.prototype.myMap = function (callback: any) {
 //  
 //   The callback function takes in the same arguments as the ones that the callback function in myMap takes in.
 
+// @ts-ignore
 Array.prototype.myFilter = function (callback: any) {
     const output: any[] = [];
 
@@ -58,6 +60,7 @@ Array.prototype.myFilter = function (callback: any) {
 //   If the array contains no elements, the initialValue should be returned. Note that this differs slightly from the 
 //   Array,prototype.reduce function.
 
+// @ts-ignore
 Array.prototype.myReduce = function (callback: any, initialValue: any) {
     let acc: any = initialValue;
     for (let i: number = 0; i < this.length; i++) {

@@ -1,13 +1,20 @@
 // Implement the following three functions of a basic JavaScript testing framework:
 //
-// 1. "describe" - This function defines a test suite of related test cases. It takes in a string "testSuiteName" and a callback "func", 
-// which makes one or more calls to "it".
+// 1. "describe" 
+//  
+//  This function defines a test suite of related test cases. It takes in a string "testSuiteName" and a callback "func", 
+//  which makes one or more calls to "it".
 //
-// 2. "it" - This function defines a single test case in a test suite and is called within a "describe"'s callback "func". It takes in a
-// string "testCaseName" and its own callback "func", which makes one or more calls to "expect".
+// 2. "it"
+//
+//  This function defines a single test case in a test suite and is called within a "describe"'s callback "func". It takes in a
+//  string "testCaseName" and its own callback "func", which makes one or more calls to "expect".
 // 
-// 3. "expect" - This function defines a single check in a test case and is called within an it's callback func. It takes an arbitrary
-// parameter actual and returns an object with the following three functions that are used to compare "actual" to other values:
+// 3. "expect"
+// 
+//  This function defines a single check in a test case and is called within an it's callback func. It takes an arbitrary
+//  parameter actual and returns an object with the following three functions that are used to compare "actual" to other values:
+//    
 //    a) expect(actual).toExist() - This function checks that "actual" is neither null nor undefined.
 //    b) expect(actual).toBe(expected) - This function checks that "actual" is strickly equal to "expected".
 //    c) expect(actual).toBeType(type) - This function checks that "actual" if of the type "type", which can be any string returned by the "typeof" operator. 
