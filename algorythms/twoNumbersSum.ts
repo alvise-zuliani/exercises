@@ -9,6 +9,7 @@
 // You can assume that there will be at most one pair of numbers summing up to the target sum.
 
 // Time Complexity: O(n)T, O(n)S
+// @ts-ignore
 export function twoNumberSum(array: number[], targetSum: number) {
     const seenArrayMembers: Map<number, boolean> = new Map();
     for (let i: number = 0; i < array.length; i++) {
@@ -26,12 +27,13 @@ export function twoNumberSum(array: number[], targetSum: number) {
 }
     
 // Time Complexity: O(n^2)T, O(1)S
+// @ts-ignore
 export function twoNumberSum(array: number[], targetSum: number) {
 
     for (let i: number = 0; i < array.length; i++) {
         const currentNum: number = array[i];
         const complementary: number = targetSum - currentNum;
-        if array.contains(complementary){
+        if (array.includes(complementary)){
             return [currentNum, complementary]
         }
     }
@@ -39,7 +41,8 @@ export function twoNumberSum(array: number[], targetSum: number) {
     return [];
 }
 
-// Complexity: O(n*log(n))T; O(1)S
+// Complexity: O(n * log n)T; O(1)S
+// @ts-ignore
 export function twoNumberSum(array: number[], targetSum: number) {
     // we sort the array in an ascending order
     array.sort((a, b) => a - b);
