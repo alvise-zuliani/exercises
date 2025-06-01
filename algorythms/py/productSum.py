@@ -10,27 +10,14 @@
 # Therefore, the product sum of [x, y] is x + y; the product sum of [x, [y, z]] is x + 2 * (y + z); the product
 # sum of [x, [y, [z]]] is x + 2 * (y + 3z)
 
-# input = [[[[[5]]]]]
-
 def productSum(array):
-    final_expression = []
-    depth = 1
-    for item in array:
-        if type(item) == list:
-            final_expression.append(flatten(item, depth))
-            depth = 1
-        else:
-            final_expression.append(item)
-    return sum(final_expression)
+    def helper(arr, depth):
+        total = 0
+        for item in arr:
+            if isinstance(item, list):
+                total += helper(item, depth + 1)
+            else:
+                total += item
+        return total * depth
 
-
-def flatten(list, depth):
-    depth += 1
-    flat = []
-    for item in list:
-        if type(item) == list:
-            flat.append(flatten(item, depth))
-        else:
-            flat.append(item * depth)
-    return sum(flat)
-   
+    return helper(array, 1)
