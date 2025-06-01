@@ -1,7 +1,4 @@
 # Write a function that takes in an array of integers and returns a sorted version of that array.
-#
-# input: [8, 5, 2, 9, 5, 6, 3]
-# output: [5, 2, 8, 5, 3, 9] -> [2, 5, 5, 3, 8, 9] -> [2, 5, 3, 5, 8, 9] -> [2, 3, 5, 5, 8, 9]
 
 def bubbleSort(array):
     sorted_array = []
