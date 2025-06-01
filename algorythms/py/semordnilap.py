@@ -12,7 +12,8 @@ def semordnilap(words):
     pairs = []
     for word in words:
         semordnilap = word[::-1]
-        if semordnilap in words_set and semordnilap != word:
+        is_not_palindrome = semordnilap != word
+        if semordnilap in words_set and is_not_palindrome:
             pairs.append([word, semordnilap])
             words_set.remove(word)
             words_set.remove(semordnilap)
