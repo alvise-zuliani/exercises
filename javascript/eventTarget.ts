@@ -20,17 +20,30 @@
 
 // @ts-ignore
 class EventTarget {
-  
-    addEventListener(name: string, callback: any) {
-      // Write your code here.
-      
-    }
-  
-    removeEventListener(name, callback) {
-      // Write your code here.
-    }
-  
-    dispatchEvent(name) {
-      // Write your code here.
+  listeners: {};
+  // Write your code here.
+  constructor() {
+    this.listeners = {}
+  }
+
+  addEventListener(name, callback) {
+    // Write your code here.
+    if (!this.listeners.hasOwnProperty(name)) {
+      this.listeners[name] = new Set([callback]);
+    } else {
+      this.listeners[name].add(callback);
     }
   }
+
+  removeEventListener(name, callback) {
+    // Write your code here.
+    this.listeners[name]?.delete(callback);
+  }
+
+  dispatchEvent(name) {
+    // Write your code here.
+    this.listeners[name]?.forEach(callback => {
+      callback();
+    })
+  }
+}
